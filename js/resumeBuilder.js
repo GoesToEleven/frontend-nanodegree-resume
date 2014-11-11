@@ -2,7 +2,8 @@
 * VANILLA JS
 */
 var stringToAdd = "";
-stringToAdd += "<p>Todd McLeod</p>";
+var name = "Todd McLeod";
+stringToAdd += "<p>" + name + "</p>";
 
 var email = "toddmcleod@udacity.com";
 var newEmail = email.replace("udacity", "gmail");
@@ -16,6 +17,10 @@ var funThoughts = awesomeThoughts.replace("awesome!", "FUN");
 stringToAdd += ("<p>" + awesomeThoughts + "</p>");
 
 document.querySelector("#main").innerHTML = stringToAdd;
+
+var formattedName = HTMLheaderName.replace("%data%", name);
+
+document.querySelector("#header").append(formattedName);
 
 /*
  * JQUERY
