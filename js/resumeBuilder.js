@@ -9,27 +9,62 @@ var bio = {
         "location": "California"
     },
     "welcomeMessage": "Beautiful design, elegant code",
-    "skills": "HTML, CSS, JavaScript",
-    //"skills": ["HTML", "CSS", "JavaScript"],
+    //"skills": "HTML, CSS, JavaScript",
+    "skills": ["HTML", "CSS", "JavaScript"],
     "pictureURL": "images/me.jpg"
 };
 
 var education = {
     "schools": [
         {
-        "name": "CSU Fresno",
-        "dates": "1996 - 1998",
-        "location": "Fresno, CA",
-        "degree": "MBA",
-        "major": "Business"
+            "name": "CSU Fresno",
+            "dates": "1996 - 1998",
+            "location": "Fresno, CA",
+            "degree": "MBA",
+            "major": ["Business"],
+            "URL": "http://www.fresnostate.edu/craig/"
+        },
+        {
+            "name": "UCSC",
+            "dates": "1992 - 1993",
+            "location": "Santa Cruz, CA",
+            "degree": "Bachelor of Arts",
+            "major": ["Economics"],
+            "URL": "http://www.fresnostate.edu/craig/"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "title": "Intro to HTML and CSS",
+            "school": "Udacity",
+            "dates": "10/29/14",
+            "url": "https://www.udacity.com/course/ud304"
+        },
+        {
+            "title": "Programming Foundations with Python",
+            "school": "Udacity",
+            "dates": "5/28/14",
+            "url": "https://www.udacity.com/course/ud036"
+        },
+        {
+            "title": "Intro to Computer Science",
+            "school": "Udacity",
+            "dates": "7/10/14",
+            "url": "https://www.udacity.com/course/cs101"
+        },
+        {
+            "title": "How to Use Git and GitHub",
+            "school": "Udacity",
+            "dates": "11/13/14",
+            "url": "https://www.udacity.com/course/ud775"
         }
     ]
 };
 
-var employment = {
-    "work": [
+var work = {
+    "jobs": [
         {
-            "position": "Tenured Faculty",
+            "title": "Tenured Faculty",
             "employer": "Fresno City College",
             "dates": "2000 - Present",
             "city": "Fresno, CA",
@@ -57,7 +92,20 @@ var employment = {
     ]
 };
 
-//console.log(employment.work[0].position);
+var portfolio = {
+  "projects": [
+      {
+          "title": "Intro to HTML and CSS",
+          "dates": "10/29/14",
+          "description": "Created webpages using current HTML / CSS practices",
+          "imageURLs": [
+              "https://cdn.rawgit.com/GoesToEleven/udacity_HTML_CSS/master/portfolio/final_project/mockup_one.html"
+          ]
+      }
+  ]
+};
+
+//console.log(work.jobs[0].title);
 //console.log(education.schools[0].name);
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -72,10 +120,10 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedPictureURL = HTMLbioPic.replace("%data%", bio.pictureURL);
 var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", employment.work[0].employer) + HTMLworkTitle.replace("%data%", employment.work[0].position);
-var formattedWorkDates = HTMLworkDates.replace("%data%", employment.work[0].dates);
-var formattedWorkLocation = HTMLworkLocation.replace("%data%", employment.work[0].city);
-var formattedWorkDescription = HTMLworkDescription.replace("%data%", employment.work[0].description);
+var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[0].employer) + HTMLworkTitle.replace("%data%", work.jobs[0].title);
+var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[0].dates);
+var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[0].city);
+var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[0].description);
 var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[0].name) + HTMLschoolDegree.replace("%data%", education.schools[0].degree);
 var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[0].dates);
 var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[0].location);
@@ -93,7 +141,7 @@ document.querySelector("#header ul").insertAdjacentHTML("afterend", formattedPic
 document.querySelector("#header ul").insertAdjacentHTML("afterend", formattedWelcomeMessage);
 document.querySelector("#header ul:last-child").insertAdjacentHTML("beforeend", formattedSkills);
 
-document.querySelector("#workExperience").insertAdjacentHTML("beforeend", HTMLworkStart);
+document.querySelector("#jobsExperience").insertAdjacentHTML("beforeend", HTMLworkStart);
 document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkEmployer);
 //document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkTitle);
 document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDates);
