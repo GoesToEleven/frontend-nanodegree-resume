@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7e2ed42-a61e-4d35-b2d8-c0f960aa3c19" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lesson_02/for_in_loop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/resumeBuilder.js" afterPath="$PROJECT_DIR$/js/resumeBuilder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/helper.js" afterPath="$PROJECT_DIR$/js/helper.js" />
     </list>
     <ignored path="frontend-nanodegree-resume.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +51,8 @@
       <file leaf-file-name="helper.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/helper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35211268" vertical-offset="240" max-vertical-offset="4900">
-              <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.38732395" vertical-offset="240" max-vertical-offset="4900">
+              <caret line="23" column="85" selection-start-line="23" selection-start-column="85" selection-end-line="23" selection-end-column="85" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -609,8 +607,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/helper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35211268" vertical-offset="240" max-vertical-offset="4900">
-          <caret line="22" column="81" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.38732395" vertical-offset="240" max-vertical-offset="4900">
+          <caret line="23" column="85" selection-start-line="23" selection-start-column="85" selection-end-line="23" selection-end-column="85" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
