@@ -110,8 +110,6 @@ var portfolio = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-//var formattedContact = HTMLcontactGeneric.replace("%contact%", bio.contact);
-//formattedContact = formattedContact.replace("%data%", bio.contact2);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
@@ -119,7 +117,6 @@ var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedPictureURL = HTMLbioPic.replace("%data%", bio.pictureURL);
 var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[0].employer) + HTMLworkTitle.replace("%data%", work.jobs[0].title);
 var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[0].dates);
 var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[0].city);
@@ -131,26 +128,29 @@ var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[0
 
 document.querySelector("#header").insertAdjacentHTML("afterbegin", formattedRole);
 document.querySelector("#header").insertAdjacentHTML("afterbegin", formattedName);
-//document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedContact);
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedMobile);
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedEmail);
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedTwitter);
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedGithub);
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedLocation);
-document.querySelector("#header ul").insertAdjacentHTML("afterend", formattedPictureURL);
-document.querySelector("#header ul").insertAdjacentHTML("afterend", formattedWelcomeMessage);
-document.querySelector("#header ul:last-child").insertAdjacentHTML("beforeend", formattedSkills);
+document.querySelector("#header").insertAdjacentHTML("beforeend", formattedWelcomeMessage);
+document.querySelector("#header").insertAdjacentHTML("beforeend", formattedPictureURL);
+if (bio.skills.length > 0) {
+    document.querySelector("#header").insertAdjacentHTML("beforeend", HTMLskillsStart);
+    for (var i = 0; i < bio.skills.length; i++) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+        document.querySelector("#skills").insertAdjacentHTML("beforeend", formattedSkills);
+    }
+}
 
 document.querySelector("#jobsExperience").insertAdjacentHTML("beforeend", HTMLworkStart);
 document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkEmployer);
-//document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkTitle);
 document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDates);
 document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkLocation);
 document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDescription);
 
 document.querySelector("#education").insertAdjacentHTML("beforeend", HTMLschoolStart);
 document.querySelector(".education-entry").insertAdjacentHTML("beforeend", formattedSchoolName);
-//document.querySelector(".education-entry").insertAdjacentHTML("beforeend", formattedSchoolDegree);
 document.querySelector(".education-entry").insertAdjacentHTML("beforeend", formattedSchoolDates);
 document.querySelector(".education-entry").insertAdjacentHTML("beforeend", formattedSchoolLocation);
 document.querySelector(".education-entry").insertAdjacentHTML("beforeend", formattedSchoolMajor);
