@@ -88,6 +88,13 @@ var work = {
             "the district-wide Great Teacher's Conference; presented at staff development days; presented at Fresno City College's " +
             "Summer Institute; helped initiate bond Measure 'E' which provided $30 million in funding to refurbish Fresno " +
             "City College's 'Old Administration Building' which had been closed for 34 years."
+        },
+        {
+            "title": "Adjunct Faculty",
+            "employer": "California State University, Fresno",
+            "dates": "1997 - 2000",
+            "city": "Fresno, CA",
+            "description": "Taught classes."
         }
     ]
 };
@@ -117,10 +124,6 @@ var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedPictureURL = HTMLbioPic.replace("%data%", bio.pictureURL);
 var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[0].employer) + HTMLworkTitle.replace("%data%", work.jobs[0].title);
-var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[0].dates);
-var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[0].city);
-var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[0].description);
 var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[0].name) + HTMLschoolDegree.replace("%data%", education.schools[0].degree);
 var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[0].dates);
 var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[0].location);
@@ -133,8 +136,8 @@ document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedEm
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedTwitter);
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedGithub);
 document.querySelector("#header ul").insertAdjacentHTML("beforeend", formattedLocation);
-document.querySelector("#header").insertAdjacentHTML("beforeend", formattedWelcomeMessage);
 document.querySelector("#header").insertAdjacentHTML("beforeend", formattedPictureURL);
+document.querySelector("#header").insertAdjacentHTML("beforeend", formattedWelcomeMessage);
 if (bio.skills.length > 0) {
     document.querySelector("#header").insertAdjacentHTML("beforeend", HTMLskillsStart);
     for (var i = 0; i < bio.skills.length; i++) {
@@ -143,11 +146,19 @@ if (bio.skills.length > 0) {
     }
 }
 
-document.querySelector("#jobsExperience").insertAdjacentHTML("beforeend", HTMLworkStart);
-document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkEmployer);
-document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDates);
-document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkLocation);
-document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDescription);
+
+
+for (item in work.jobs) {
+    var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[item].employer) + HTMLworkTitle.replace("%data%", work.jobs[item].title);
+    var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[item].dates);
+    var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[item].city);
+    var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[item].description);
+    document.querySelector("#jobsExperience").insertAdjacentHTML("beforeend", HTMLworkStart);
+    document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkEmployer);
+    document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDates);
+    document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkLocation);
+    document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDescription);
+}
 
 document.querySelector("#education").insertAdjacentHTML("beforeend", HTMLschoolStart);
 document.querySelector(".education-entry").insertAdjacentHTML("beforeend", formattedSchoolName);
