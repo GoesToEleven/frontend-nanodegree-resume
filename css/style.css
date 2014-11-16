@@ -4,8 +4,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
-
 .education-entry, .work-entry, .project-entry {
   padding-left: 5%;
   padding-right: 5%;
@@ -13,7 +11,6 @@
 
 
 h1 {
-
   font-size: 40px;
   color: #F5A623;
   line-height: 48px;
@@ -63,7 +60,6 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -88,10 +84,6 @@ a {
 
 #skillsH3 {
   color: #F5AE23;
-  display: none;
-}
-
-#skills {
   display: none;
 }
 
@@ -195,6 +187,10 @@ span {
   .welcome-message {
     display: none;
   }
+
+  #skills {
+    display: none;
+  }
 }
 
 #map {
@@ -212,7 +208,6 @@ span {
 
 @media only screen and (min-width: 750px) {
   #skillsH3,
-  #skills,
   .biopic {
     display: block;
   }

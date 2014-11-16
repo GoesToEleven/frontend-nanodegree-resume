@@ -148,12 +148,12 @@ if (bio.skills.length > 0) {
 
 
 
-for (item in work.jobs) {
-    var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[item].employer) + HTMLworkTitle.replace("%data%", work.jobs[item].title);
-    var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[item].dates);
-    var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[item].city);
-    var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[item].description);
-    document.querySelector("#jobsExperience").insertAdjacentHTML("beforeend", HTMLworkStart);
+for (i in work.jobs) {
+    var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer) + HTMLworkTitle.replace("%data%", work.jobs[i].title);
+    var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+    var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].city);
+    var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+    document.querySelector("#workExperience").insertAdjacentHTML("beforeend", HTMLworkStart);
     document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkEmployer);
     document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkDates);
     document.querySelector(".work-entry").insertAdjacentHTML("beforeend", formattedWorkLocation);
